@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update URLs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../static/Bootstrap/bootstrap.min.css">
+
+	<!-- manual CSS -->
+	<link rel="stylesheet" type="text/css" href="../static/css2/style.css">
+</head>
+<body>
+    <div class="container-fluid ">
+		<div class="container" style="padding: 0px;">
+			<nav class="navbar black navbar-expand-md navbar-light sticky-top " style="border-bottom: 1px solid lightgray;background-color: white;padding-top:15px;">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <div class="icon-img">
+                        <img src="../static/i1.png" width="200%;">
+                    </div>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="position: absolute; right: 25px;">
+                    <ul class="navbar-nav" >
+
+                      <li class="nav-item menu-opt ">
+                        <a class="nav-link" href="/logout">Logout</a>
+                      </li>
+                        <li class="nav-item menu-opt ">
+                        <a class="nav-link" href="/order">My Orders</a>
+                      </li>
+
+                    </ul>
+                 </div>
+             </div>
+        </nav>
+        <!-----------------------Url Box--------------------------------------->
+
+        <!-----------------------Table Data--------------------------------------->
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                      <th>User_Id</th>
+
+                      <th>First_Nmae</th>
+
+                    <th> Last_Name</th>
+
+                      <th>Email</th>
+
+                      <th>Address1</th>
+
+                      <th>Address2</th>
+
+                      <th>Zipcode</th>
+
+                      <th>City</th>
+
+                      <th>State</th>
+
+                      <th>Country</th>
+
+                       <th>Phone_NO.</th>
+                    <th>Edit</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                   <tr>
+
+
+
+                        <td>{{xyz[0]}}</td>
+
+                       <td>{{xyz[1]}}</td>
+
+                        <td>{{xyz[2]}}</td>
+
+                        <td>{{xyz[3]}}</td>
+
+                        <td>{{xyz[4]}}</td>
+
+                        <td>{{xyz[5]}}</td>
+
+                        <td>{{xyz[6]}}</td>
+
+                       <td>{{xyz[7]}}</td>
+
+                       <td>{{xyz[8]}}</td>
+
+                       <td>{{xyz[9]}}</td>
+
+                       <td>{{xyz[12]}}</td>
+
+                       <td>
+                            <form action="edit" method="post">
+                                <input type="hidden" value="{{ xyz[0] }}" name="id">
+                            <input type="hidden" value="{{ xyz[3] }}" name="email">
+                                <input type="hidden" value="{{ xyz[4] }}" name="address1">
+                                <input type="hidden" value="{{ xyz[5] }}" name="address2">
+                                <input type="hidden" value="{{ xyz[6] }}" name="zipcode">
+                                <input type="hidden" value="{{ xyz[7] }}" name="city">
+                                <input type="hidden" value="{{ xyz[12] }}" name="phone">
+                            <button type="submit" value="submit">Edit</button>
+                            </form>
+                        </td>
+
+
+
+
+
+                </tr>
+
+
+
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>

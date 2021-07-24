@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Product Description</title>
+<link rel="stylesheet" href={{url_for('static', filename='scart.css/pd.txt')}} />
+<link rel="stylesheet" href={{ url_for('static', filename='scart.css/tp.txt')}} />
+</head>
+<body>
+<div id="title">
+
+
+
+	{% if not loggedIn %}
+	<div id="signInButton">
+		<a class="link" href="/loginForm">Sign In</a>
+	</div>
+	{% else %}
+	<div class="dropdown">
+		<button class="dropbtn">Hello, <br>{{First_Name}}</button>
+		<div class="dropdown-content">
+			<a href="/account/orders">Your orders</a>&nbsp;
+			<a href="/profile.html">Your profile</a>&nbsp;
+			<a href="/logout">Sign Out</a>
+		</div>
+	</div>
+	{% endif %}
+	<div id="kart">
+		<a class="link" href="/cart">
+			<img src="../static/cart.jpg" width="75" height="75" style="margin-top:30px" id="cartIcon" />
+			CART {{noOfItems}}
+		</a>
+	</div>
+</div>
+<div id="display">
+	<div id="productName">
+		<h2>{{data[1]}}</h2>
+	</div>
+    <div>
+		<img src="{{ url_for('send_image', filename= data[5]) }}" alt="" class="img-fluid" id="productImage"width="250" height="250" style="margin-top:10px"/>
+	</div>
+	<div id="productDescription">
+		<h2>Details</h2>
+		<table id="descriptionTable">
+			<tr>
+				<td>Name</td>
+				<td>{{data[1]}}</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>${{data[2]}}</td>
+			</tr>
+			<tr>
+				<td>Stock</td>
+				<td>{{data[4]}}</td>
+			</tr>
+		</table>
+		<h2>Description</h2>
+		<p>{{data[3]}}</p>
+	</div>
+	<div id="addToCart">
+		<a href="/addToCart">Add to Cart</a>
+	</div>
+</div>
+</body>
+</html>

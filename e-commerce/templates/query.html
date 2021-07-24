@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update URLs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../static/Bootstrap/bootstrap.min.css">
+
+	<!-- manual CSS -->
+	<link rel="stylesheet" type="text/css" href="../static/css2/style.css">
+</head>
+<body>
+    <div class="container-fluid ">
+		<div class="container" style="padding: 0px;">
+			<nav class="navbar black navbar-expand-md navbar-light sticky-top " style="border-bottom: 1px solid lightgray;background-color: white;padding-top:15px;">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <div class="icon-img">
+                        <img src="../static/i1.png" width="200%;">
+                    </div>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar" style="position: absolute; right: 25px;">
+                    <ul class="navbar-nav" >
+
+                      <li class="nav-item menu-opt ">
+                        <a class="nav-link" href="/logout">Logout</a>
+                      </li>
+                        <li class="nav-item menu-opt ">
+                        <a class="nav-link" href="/order">My Orders</a>
+                      </li>
+
+                    </ul>
+                 </div>
+             </div>
+        </nav>
+        <!-----------------------Url Box--------------------------------------->
+
+        <!-----------------------Table Data--------------------------------------->
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                      <th>Message</th>
+                      <th></th>
+                      <th>Nmae</th>
+                      <th></th>
+
+                      <th>Email</th>
+                      <th></th>
+
+                       <th>Subject</th>
+
+
+                  </tr>
+                </thead>
+                <tbody>
+                {% for item in xyz %}
+                   <tr>
+
+
+
+                        <td>{{item.0}}</td>
+                       <td></td>
+                       <td>{{item.1}}</td>
+                       <td></td>
+                        <td>{{item.2}}</td>
+                       <td></td>
+                        <td>{{item.3}}</td>
+                       <td></td>
+
+
+
+
+
+
+               {% endfor %}
+                </tr>
+
+
+
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>
